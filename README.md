@@ -18,6 +18,11 @@ Exhaustive component level design process of your application. It includes:
 4. **Bottlenecks**: Find the bottlenecks and solve them
 5. **Scalability**: A large number of users
 
+## Initial Steps
+- Identify the **Actors**
+- Identifying the **use cases** that the Actors will be engaged in
+- Identify all the **Entities** and **Attributes**
+
 ## LLD Document
 
 It is a heavy-duty, bulky document that contains the pseudocode for the developers. The main objective is to mitigate any additional burden developers face during the development phase by clearly laying out details. It acts as a reference material for the developers.
