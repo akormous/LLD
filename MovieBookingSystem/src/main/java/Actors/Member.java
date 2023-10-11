@@ -1,3 +1,5 @@
+package Actors;
+
 public class Member {
     public String name, email, id, phone;
 

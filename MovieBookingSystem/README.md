@@ -1,4 +1,4 @@
-# Movie Booking System
+# Movie Entities.Booking System
 
 ## Requirements
 1. System should list the cities where affiliate cinemas are located
@@ -11,40 +11,40 @@
     - release date
     - city name
 5. Once a movie is selected, the system should display the cinemas running that movie and its available shows
-6. Customer can select a show at a particular cinema and book tickets
+6. Actors.Customer can select a show at a particular cinema and book tickets
 7. System should show the seating arrangement of the cinema hall. The customer can select multiple seats
-8. Customer should be able to distinguish between available seats and booked seats
+8. Actors.Customer should be able to distinguish between available seats and booked seats
 9. System should ensure that no two customers can reserve the same seat (thread safety while selecting and booking seats)
 
 ## Actors
-- Customer - online user
-- Customer Care Representative - booking via call
+- Actors.Customer - online user
+- Actors.Customer Care Representative - booking via call
 - Front Desk Assistant - present at the movie hall, in-person booking
 - Theater Administrator - updates system with new movies information and remove inactive ones, employee of Theater company
-- System Administrator -  responsible for onboarding theater clients, employee of Movie Booking System
+- System Administrator -  responsible for onboarding theater clients, employee of Movie Entities.Booking System
 
 ## Entities
 - Theater Company
 - Theater Locations (Cinema Hall / Multiplex)
 - Movie
 - Movie Show (2D/3D/time based)
-- Seat
-- Booking
-- Payment
+- Entities.Seat
+- Entities.Booking
+- Entities.Payment
 
 ## Basic Design
 
 ```mermaid
 classDiagram
 direction LR
-class Member {
+class Actors.Member {
 +id
 +name
 +email
 +phone
 }
 
-class Customer
+class Actors.Customer
 class OnlineUser
 class CustomerCareRepresentative
 class FrontDeskAssistant
@@ -55,20 +55,20 @@ class Address
 class MovieHall
 class Movie
 class Show
-class Seat
-class Booking
-class Payment
+class Entities.Seat
+class Entities.Booking
+class Entities.Payment
 
 
 
-Member <-- TheaterAdministrator
-SystemAdministrator --> Member 
-Member <-- Customer
+Actors.Member <-- TheaterAdministrator
+SystemAdministrator --> Actors.Member 
+Actors.Member <-- Actors.Customer
 
-Customer -- Booking
-Customer <-- OnlineUser
-Customer <-- CustomerCareRepresentative
-Customer <-- FrontDeskAssistant
+Actors.Customer -- Entities.Booking
+Actors.Customer <-- OnlineUser
+Actors.Customer <-- CustomerCareRepresentative
+Actors.Customer <-- FrontDeskAssistant
 
 
 TheaterCompany "1" *--> "*" MovieHall
@@ -76,9 +76,9 @@ TheaterCompany *--> Address
 TheaterCompany "1" *--> "*" TheaterAdministrator
 MovieHall "1" *--> "*" Show
 Show -- Movie
-MovieHall "1" o--> "*" Seat
-Booking "1" -- "*" Seat
-Booking -- Payment
+MovieHall "1" o--> "*" Entities.Seat
+Entities.Booking "1" -- "*" Entities.Seat
+Entities.Booking -- Entities.Payment
 
 
 ```

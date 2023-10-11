@@ -4,6 +4,10 @@
   <groupId>dev.akormous</groupId>
   <artifactId>MovieBookingSystem</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Archetype - MovieBookingSystem</name>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    <name>Archetype - MovieBookingSystem</name>
   <url>http://maven.apache.org</url>
 </project>
