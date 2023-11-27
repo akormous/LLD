@@ -37,14 +37,14 @@
 ```mermaid
 classDiagram
 direction LR
-class Actors.Member {
+class Member {
 +id
 +name
 +email
 +phone
 }
 
-class Actors.Customer
+class Customer
 class OnlineUser
 class CustomerCareRepresentative
 class FrontDeskAssistant
@@ -55,20 +55,20 @@ class Address
 class MovieHall
 class Movie
 class Show
-class Entities.Seat
-class Entities.Booking
-class Entities.Payment
+class Seat
+class Booking
+class Payment
 
 
 
-Actors.Member <-- TheaterAdministrator
-SystemAdministrator --> Actors.Member 
-Actors.Member <-- Actors.Customer
+Member <-- TheaterAdministrator
+SystemAdministrator --> Member 
+Member <-- Customer
 
-Actors.Customer -- Entities.Booking
-Actors.Customer <-- OnlineUser
-Actors.Customer <-- CustomerCareRepresentative
-Actors.Customer <-- FrontDeskAssistant
+Customer -- Booking
+Customer <-- OnlineUser
+Customer <-- CustomerCareRepresentative
+Customer <-- FrontDeskAssistant
 
 
 TheaterCompany "1" *--> "*" MovieHall
@@ -76,9 +76,9 @@ TheaterCompany *--> Address
 TheaterCompany "1" *--> "*" TheaterAdministrator
 MovieHall "1" *--> "*" Show
 Show -- Movie
-MovieHall "1" o--> "*" Entities.Seat
-Entities.Booking "1" -- "*" Entities.Seat
-Entities.Booking -- Entities.Payment
+MovieHall "1" o--> "*" Seat
+Booking "1" -- "*" Seat
+Booking -- Payment
 
 
 ```
